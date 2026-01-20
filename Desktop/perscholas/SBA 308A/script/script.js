@@ -142,10 +142,8 @@ async function createDogCard(breed) {
     return card;
 }
 
-/**
- * Load and display the next batch of dogs
- * Demonstrates event loop understanding and async operations
- */
+//
+
 async function loadMoreDogs() {
     const breedsToShow = filteredBreeds.slice(currentIndex, currentIndex + DOGS_PER_LOAD);
     
@@ -160,7 +158,7 @@ async function loadMoreDogs() {
     try {
         const dogGrid = document.getElementById('dogGrid');
         
-        // Create cards for each breed (demonstrates sequential async operations)
+        // Create cards for each breed 
         for (const breed of breedsToShow) {
             const card = await createDogCard(breed);
             dogGrid.appendChild(card);
@@ -169,7 +167,7 @@ async function loadMoreDogs() {
 
         currentIndex += DOGS_PER_LOAD;
 
-        // Disable load more button if we've shown all dogs
+        
         if (currentIndex >= filteredBreeds.length) {
             loadMoreBtn.textContent = 'No More Dogs 🐶';
             loadMoreBtn.disabled = true;
@@ -185,10 +183,9 @@ async function loadMoreDogs() {
     }
 }
 
-/**
- * Handle search functionality
- * Demonstrates event handling and filtering
- */
+
+ // Handle search functionality
+ 
 function handleSearch(event) {
     const searchTerm = event.target.value.toLowerCase().trim();
     const dogGrid = document.getElementById('dogGrid');
@@ -218,18 +215,13 @@ function handleSearch(event) {
     }
 }
 
-// ==================== INITIALIZATION ====================
 
-/**
- * Initialize the application
- * Demonstrates proper async/await usage and error handling
- */
 async function init() {
     try {
         showLoading();
         hideError();
 
-        // Fetch all breeds (demonstrates async GET request)
+        // Fetch all breeds 
         allBreeds = await getAllBreeds();
         filteredBreeds = allBreeds;
 
@@ -249,9 +241,7 @@ async function init() {
     }
 }
 
-// ==================== START APPLICATION ====================
-// Start the application when the DOM is fully loaded
-// Demonstrates understanding of the event loop and DOM ready state
+
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
 } else {
