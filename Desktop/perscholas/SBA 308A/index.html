@@ -10,39 +10,28 @@
 </head>
 
 <body>
-    <header>
-        <div class="container">
-            <h1>🐕 Dog Breed Explorer</h1>
-            <div class="search-container">
-                <input type="text" id="searchInput" placeholder="Search for a breed..." autocomplete="off">
-            </div>
-        </div>
-    </header>
+    <div class="container">
+        <header>
+            <h1>🐕 Dog Facts Gallery</h1>
+            <p class="subtitle">Discover amazing facts about different dog breeds!</p>
+        </header>
 
-    <main class="container">
+        <div class="controls">
+            <input type="text" id="searchInput" class="search-box" placeholder="Search for a breed..."
+                autocomplete="off">
+            <button id="loadMoreBtn" class="load-more-btn">Load More Dogs 🐾</button>
+        </div>
+
         <div id="loading" class="loading hidden">
-            <p>Loading...</p>
+            Loading amazing dogs...
         </div>
 
         <div id="error" class="error hidden">
             <p id="errorMessage"></p>
-            <button id="retryButton">Try Again</button>
         </div>
 
-        <div id="breedList" class="breed-grid"></div>
-
-        <div id="breedDetail" class="hidden">
-            <button id="backButton" class="back-button">← Back to Breeds</button>
-            <div id="breedInfo" class="breed-info"></div>
-            <h3>Gallery</h3>
-            <div id="imageGallery" class="image-grid"></div>
-            <div id="pagination" class="pagination hidden">
-                <button id="prevButton">← Previous</button>
-                <span id="pageInfo">Page 1</span>
-                <button id="nextButton">Next →</button>
-            </div>
-        </div>
-    </main>
+        <div id="dogGrid" class="dog-grid"></div>
+    </div>
 
     <script src="script.js"></script>
 </body>
