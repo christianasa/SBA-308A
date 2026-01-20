@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #0630ea 0%, #750ddd 100%);
+    background: linear-gradient(135deg, #0630ea 0%, #a567e3 100%);
     min-height: 100vh;
     padding: 20px;
 }
@@ -127,14 +127,14 @@ h1 {
 
 .dog-name {
     font-size: 1.8rem;
-    color: #333;
+    color: #b31b1b;
     margin-bottom: 15px;
     font-weight: bold;
 }
 
 .fact-label {
     display: inline-block;
-    background: #667eea;
+    background: #04209a;
     color: white;
     padding: 5px 12px;
     border-radius: 15px;
